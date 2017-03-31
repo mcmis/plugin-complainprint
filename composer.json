@@ -1,0 +1,21 @@
+{
+  "name": "mcmis/plugin-complainprint",
+  "description": "The plugin complain print package for support of MCMIS",
+  "type": "mcmis-plugin",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Farhan Wazir",
+      "email": "farhan.wazir@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.9",
+    "mcmis/base": ">=0.5.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "MCMIS\\Plugin\\ComplainPrint\\": "src/"
+    }
+  }
+}
