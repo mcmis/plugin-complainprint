@@ -46,7 +46,7 @@ class Register
             __DIR__.'/Publisher/config/complainprint.php' => config_path('complainprint'),
         ]);
 
-        $this->publishes([
+        $registrar->publishes([
             __DIR__.'/Publisher/lang' => resource_path('lang'),
         ]);
     }
