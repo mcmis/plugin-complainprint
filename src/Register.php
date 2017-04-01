@@ -36,8 +36,18 @@ class Register
     }
 
     public function registerRoute(Router $router){
-        $router->group(['middleware' => 'web'], function($route){
+        $router->group(['middleware' => config('complainprint.middleware')], function($route){
             require_once __DIR__.'/route.php';
         });
+    }
+
+    public function onExecute($registrar){
+        $registrar->publishes([
+            __DIR__.'/Publisher/config/complainprint.php' => config_path('complainprint'),
+        ]);
+
+        $this->publishes([
+            __DIR__.'/Publisher/lang' => resource_path('lang'),
+        ]);
     }
 }
