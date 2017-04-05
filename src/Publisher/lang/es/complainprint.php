@@ -29,7 +29,7 @@ return [
         'complainer' => 'Nomber',
 
         'general' => [
-            'title' => 'General'
+            'title' => 'DATOS GENERALES DEL SOLICITANTE'
         ],
 
         'location' => [
