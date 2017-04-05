@@ -10,6 +10,10 @@
  *
  * This project file is not redistributeable without permissions.
  * For more details about redistribution and reselling, contact to provided author details.
+ *
+ *
+ * For fix print in chrome:
+ * Go to settings > set margin none/custom
  -->
 
 <!DOCTYPE html>
@@ -28,6 +32,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <style>
         html{
             font-size: 0.7em;
+        }
+        .wrapper{
+            margin: 0 auto !important;
+            max-width: 95%;
         }
     </style>
 </head>
@@ -229,7 +237,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             mediaQueryList.addListener(function(mql) {
                 if (mql.matches) {
                     beforePrint();
-                }/* else {
+                }/* else { //It is not support in chrome
                     afterPrint();
                 }*/
             });

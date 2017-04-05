@@ -18,9 +18,9 @@
         mediaQueryList.addListener(function(mql) {
             if (mql.matches) {
                 beforePrint();
-            } else {
-                afterPrint();
-            }
+            }/* else { //It is not support in chrome
+             afterPrint();
+             }*/
         });
     }
 
