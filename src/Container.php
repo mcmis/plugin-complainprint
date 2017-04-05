@@ -39,13 +39,17 @@ class Container implements ComplainPrint
 
     public function getHtml()
     {
-        return require __DIR__ . '/tmpl/preview.php';
+        return view('complainprint::preview', ['item' => $this->model]);
     }
 
     public function __call($name, $arguments)
     {
-        if ($name == 'setComplain') {
-            return call_user_func($name, [(sys('config')->get('complainprint.model') ? sys('config')->get('complainprint.model') : sys('model.complain'))->where(sys('config')->get('complainprint.reference'), '=', $arguments)->first()]);
+        if ($name == 'complain') {
+            return call_user_func([$this, 'setComplain'],
+                (sys('config')->get('complainprint.model') ?
+                    sys(sys('config')->get('complainprint.model'))->where('complain_no', '=', $arguments)->first() :
+                    sys('model.complain')->where('complain_no', '=', $arguments)->first())
+            );
         }
 
         throw new \BadMethodCallException("Method $name not found.");

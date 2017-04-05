@@ -44,6 +44,8 @@ class Register
     public function onExecute($registrar){
         $registrar->loadTranslationsFrom(__DIR__.'/Publisher/lang', 'complainprint');
 
+        $registrar->loadViewsFrom(__DIR__.'/tmpl', 'complainprint');
+
         $registrar->publishes([
             __DIR__.'/Publisher/config/complainprint.php' => config_path('complainprint'),
         ]);

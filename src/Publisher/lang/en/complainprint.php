@@ -26,6 +26,11 @@ return [
         'external_complain_no' => 'Ext. No.',
         'cp' => 'C.P.',
         'telephone' => 'telephone',
+        'complainer' => 'Complainer',
+
+        'general' => [
+            'title' => 'General'
+        ],
 
         'location' => [
             'title' => 'CHARACTERISTICS OF THE APPLICATION',

@@ -26,6 +26,11 @@ return [
         'external_complain_no' => 'FOLIO EXTERNO',
         'cp' => 'C.P.',
         'telephone' => 'TELEFONO',
+        'complainer' => 'Nomber',
+
+        'general' => [
+            'title' => 'General'
+        ],
 
         'location' => [
             'title' => 'CARACTERISTICAS DE LA SOLICITUD',
