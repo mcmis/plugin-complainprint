@@ -42,12 +42,18 @@ class Register
     }
 
     public function onExecute($registrar){
+        $registrar->loadTranslationsFrom(__DIR__.'/Publisher/lang', 'complainprint');
+
         $registrar->publishes([
             __DIR__.'/Publisher/config/complainprint.php' => config_path('complainprint'),
         ]);
 
         $registrar->publishes([
-            __DIR__.'/Publisher/lang' => resource_path('lang'),
+            __DIR__.'/Publisher/lang' => resource_path('lang/vendor/complainprint'),
         ]);
+    }
+
+    public function onRegister($registrar){
+        $registrar->mergeConfigFrom(__DIR__.'/Publisher/config/complainprint.php', 'complainprint');
     }
 }
